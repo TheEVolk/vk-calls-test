@@ -32,8 +32,8 @@ async function run() {
   VKCallsSDK.init({
     apiKey: appKey,
     authToken: userToken,
-    onRemoteLive: (userId, streamId, stream) => {
-      console.log('onRemoteLive', userId, streamId, stream);
+    onRemoteStream: (userId, stream) => {
+      console.log('onRemoteStream', userId, stream);
       createVideo(userId.toString(), stream, 300)
     },
     /* ... */
